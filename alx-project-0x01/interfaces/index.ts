@@ -7,24 +7,32 @@ export interface PostProps {
 
 {
   "id": 1,
-  "name": "Leanne Graham",
-  "username": "Bret",
-  "email": "Sincere@april.biz",
+  "name": "Bello Rasheed",
+  "email": "rasheed@example.com",
+  "isActive": true,
+  "age": 31,
   "address": {
-    "street": "Kulas Light",
-    "suite": "Apt. 556",
-    "city": "Gwenborough",
-    "zipcode": "92998-3874",
-    "geo": {
-      "lat": "-37.3159",
-      "lng": "81.1496"
-    }
+    "street": "255 Ojo Road",
+    "city": "Lagos",
+    "zipCode": "100001"
   },
-  "phone": "1-770-736-8031 x56442",
-  "website": "hildegard.org",
-  "company": {
-    "name": "Romaguera-Crona",
-    "catchPhrase": "Multi-layered client-server neural-net",
-    "bs": "harness real-time e-markets"
-  }
+  "roles": ["admin", "editor"],
+  "createdAt": "2023-06-01T12:00:00Z"
+}
+
+export interface Address {
+  street: string;
+  city: string;
+  zipCode: string;
+}
+
+export interface UserProps {
+  id: number;
+  name: string;
+  email: string;
+  isActive: boolean;
+  age: number;
+  address: Address;
+  roles: string[];
+  createdAt: string;
 }
