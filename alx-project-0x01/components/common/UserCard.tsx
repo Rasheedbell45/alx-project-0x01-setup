@@ -3,7 +3,7 @@ export async function getStaticProps() {
   const posts = await response.json()
 
   return {
-    Userprops: {
+    props: {
       posts
     }
   }
@@ -11,6 +11,8 @@ export async function getStaticProps() {
 
 import React from "react";
 import { UserProps } from "@/interfaces";
+
+const ComponentName: React.FC<UserProps>
 
 const UserCard: React.FC<{ user: UserProps }> = ({ user }) => {
   return (
