@@ -22,3 +22,34 @@ const Home: React.FC = () => {
 }
 
 export default Home;
+
+import React from "react";
+import { UserProps } from "@/interfaces";
+import UserCard from "@/components/common/UserCard";
+
+interface UsersPageProps {
+  posts: UserProps[];
+}
+
+const Users: React.FC<UsersPageProps> = ({ posts }) => {
+  return (
+    <div className="p-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+      {posts.map((user) => (
+        <UserCard key={user.id} user={user} />
+      ))}
+    </div>
+  );
+};
+
+export async function getStaticProps() {
+  const res = await fetch("https://jsonplaceholder.typicode.com/users");
+  const posts: UserProps[] = await res.json();
+
+  return {
+    props: {
+      posts,
+    },
+  };
+}
+
+export default Users;
