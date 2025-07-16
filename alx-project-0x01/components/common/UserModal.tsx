@@ -22,6 +22,8 @@
   }
 }
 
+onSubmit: (post: UserProps) => void;
+
 export interface Address {
   street: string;
   suite: string;
